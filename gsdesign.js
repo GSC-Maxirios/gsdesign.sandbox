@@ -32,7 +32,7 @@
 
     function h(t) { r.env() && (f(t.design) && c.on("__wf_design", t.design), f(t.preview) && c.on("__wf_preview", t.preview)), f(t.destroy) && c.on("__wf_destroy", t.destroy), t.ready && f(t.ready) && function(t) { if (p) return void t.ready(); if (l.contains(o, t.ready)) return;
             o.push(t.ready) }(t) }
-
+        //Esta funcion determina como se va a ver la pagina en ipod/ipad/iphone
     function E(t) { f(t.design) && c.off("__wf_design", t.design), f(t.preview) && c.off("__wf_preview", t.preview), f(t.destroy) && c.off("__wf_destroy", t.destroy), t.ready && f(t.ready) && function(t) { o = l.filter(o, function(e) { return e !== t.ready }) }(t) }
     d.config.hideBackface = !1, d.config.keepInherited = !0, r.define = function(t, e, n) { i[t] && E(i[t]); var r = i[t] = e(u, l, n) || {}; return h(r), r }, r.require = function(t) { return i[t] }, r.push = function(t) { p ? f(t) && t() : a.push(t) }, r.env = function(t) { var e = window.__wf_design,
             n = void 0 !== e; return t ? "design" === t ? n && e : "preview" === t ? n && !e : "slug" === t ? n && window.__wf_slug : "editor" === t ? window.WebflowEditor : "test" === t ? window.__wf_test : "frame" === t ? window !== window.top : void 0 : n }; var g, _ = navigator.userAgent.toLowerCase(),
@@ -45,7 +45,7 @@
             r = {}; return r.up = l.throttle(function(t) { l.each(n, function(e) { e(t) }) }), t && e && t.on(e, r.up), r.on = function(t) { "function" == typeof t && (l.contains(n, t) || n.push(t)) }, r.off = function(t) { n = arguments.length ? l.filter(n, function(e) { return e !== t }) : [] }, r }
 
     function w(t) { f(t) && t() }
-
+        //Esta funcion determina el tamaño
     function A() { T && (T.reject(), c.off("load", T.resolve)), T = new u.Deferred, c.on("load", T.resolve) }
     r.resize = O(c, b), r.scroll = O(c, "scroll.webflow resize.webflow orientationchange.webflow load.webflow"), r.redraw = O(), r.location = function(t) { window.location = t }, r.env() && (r.location = function() {}), r.ready = function() { p = !0, v ? (v = !1, l.each(i, h)) : l.each(o, w), l.each(a, w), r.resize.up() }, r.load = function(t) { T.then(t) }, r.destroy = function(t) { t = t || {}, v = !0, c.triggerHandler("__wf_destroy"), null != t.domready && (p = t.domready), l.each(i, E), r.resize.off(), r.scroll.off(), r.redraw.off(), o = [], a = [], "pending" === T.state() && A() }, u(r.ready), A(), t.exports = window.Webflow = r }, function(t, e) { t.exports = function(t) { var e = typeof t; return null != t && ("object" == e || "function" == e) } }, function(t, e, n) { var r = n(177),
         i = n(231),
@@ -1370,7 +1370,7 @@
             i = "undefined" != typeof self ? self : "undefined" != typeof window ? window : void 0 !== t ? t : r; var a = Object(o.default)(i);
             e.default = a }.call(this, n(22), n(166)(t)) }, function(t, e) { t.exports = function(t) { if (!t.webpackPolyfill) { var e = Object.create(t);
             e.children || (e.children = []), Object.defineProperty(e, "loaded", { enumerable: !0, get: function() { return e.l } }), Object.defineProperty(e, "id", { enumerable: !0, get: function() { return e.i } }), Object.defineProperty(e, "exports", { enumerable: !0 }), e.webpackPolyfill = 1 } return e } }, function(t, e, n) { "use strict";
-
+            //Esta funcion determina efectos sobre los diferentes botones de la pagina y el comportamiento del mouse
     function r(t) { var e, n = t.Symbol; return "function" == typeof n ? n.observable ? e = n.observable : (e = n("observable"), n.observable = e) : e = "@@observable", e }
     n.r(e), n.d(e, "default", function() { return r }) }, function(t, e, n) { "use strict";
     Object.defineProperty(e, "__esModule", { value: !0 }), e.default = void 0; var r = n(78),
@@ -1592,7 +1592,7 @@
         o = n(199),
         a = n(200),
         u = n(201);
-
+        
     function c(t) { var e = -1,
             n = null == t ? 0 : t.length; for (this.clear(); ++e < n;) { var r = t[e];
             this.set(r[0], r[1]) } }
